@@ -43,15 +43,15 @@ function App(props) {
 
   var url = `http://k8s-eksdemogroup-e0353f9ab7-299800055.ap-northeast-2.elb.amazonaws.com/contents/${search}`
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios(url);
-      console.log('TEST!!!!!');
-      setState(result.data);
-    };
-    fetchData();
-    // eslint-disable-next-line
-  }, [search]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const result = await axios(url);
+  //     console.log('TEST!!!!!');
+  //     setState(result.data);
+  //   };
+  //   fetchData();
+  //   // eslint-disable-next-line
+  // }, [search]);
   
   return (
     <div className={classes.root}>
@@ -85,14 +85,6 @@ function App(props) {
         />
         <Button onClick={() => setSearch(query)}> Click </Button>
       </form>
-      <ul>
-      {console.log(data.outcome)}
-      {data.outcome.map( item => (
-        <li key={item.url}>
-          <a href={item.url}>{item.title}</a><br/>
-        </li>
-      ))}
-      </ul>
     </div>
   );
 }
