@@ -46,7 +46,7 @@ function App(props) {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(url);
-      console.log('TEST!!!!!');
+      console.log(result);
       setState(result.data);
     };
     fetchData();
@@ -85,6 +85,13 @@ function App(props) {
         />
         <Button onClick={() => setSearch(query)}> Click </Button>
       </form>
+      <ul>
+      {data.outcome.map( item => (
+        <li key={item.url}>
+          <a href={item.url}>{item.title}</a><br/>
+        </li>
+      ))}
+      </ul>
     </div>
   );
 }
