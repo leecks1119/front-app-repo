@@ -37,6 +37,8 @@ const useStyles = makeStyles((theme) => ({
 function App(props) {
   const classes = useStyles();
   // const { sections } = props;
+  
+  
   const [ data, setState ] = useState({outcome: []});
   const [query, setQuery] = useState('eks');
   const [search, setSearch] = useState('eks');
